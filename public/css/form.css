@@ -1,0 +1,135 @@
+body {
+    font-family: 'Times New Roman', cursive;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-repeat: no-repeat;
+    background-size: 800% 800%;
+    animation: gradient 15s ease infinite;
+    color: black;
+}
+/* Background gradient was taken from https://1stwebdesigner.com/15-css-background-effects/ */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#formSection {
+    width: 30%;
+    float: left;
+    padding: .25em;
+    border: 2px double black;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #2c2c2c;
+}
+h1{
+    text-align: center;
+}
+form, label{
+    text-align: center;
+}
+input, select{
+    width: 150px;
+    margin: 1em;
+    position: relative;
+    padding: .25em;
+    border: 2px solid black;
+    border-radius: 20px;
+    background: transparent;
+    font-family: 'Times New Roman', cursive;
+    color: black ;
+}
+input:focus, select:focus{
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: rgb(3, 42, 43) 1px 2px  5px 2px;
+    transition: all 0.30s ease-in-out;
+}
+form select option{
+    font-family: 'Times New Roman', cursive;
+}
+#placeOrder{
+    width: 100px;
+    padding: 1em;
+    box-shadow: rgb(0, 0, 0) 1px 2px  3px 1px ;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Times New Roman', cursive;
+    background-color: transparent;
+    transition: all 0.30s ease-in-out;
+}
+#placeOrder:hover{
+    transition: all 0.20s ease-in;
+    color: white;
+}
+#placeOrder:active{
+    transition: all 0.10s ease-out;
+    background-color: rgb(63, 17, 17);
+    box-shadow: 0 0 0 0 ;
+}
+#displayErrors, .invoice{
+    text-align: center;
+    color: black;
+    border: black solid 2px;
+    box-shadow: 0 0 10px #2c2c2c;
+    padding: .5em;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+#results{
+    float:right;
+}
+
+.menu{
+    background-color: transparent;
+    border: 2px solid black;
+    box-shadow: 0 0 10px #2c2c2c;
+    color: black;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+.menu ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+}
+
+.menu ul li{
+    display: inline-block;
+    width: 130px;
+}
+
+.menu ul a:hover{
+    color: white;
+    transition: all 0.20s ease-in;
+}
+.menu ul li a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+
+table{
+    border: 2px solid black;
+    box-shadow: 0 0 5px #2c2c2c;
+    border-collapse: collapse;
+    margin: 20px auto;
+    color: black;
+}
+
+td, th{
+    border: 2px solid black;
+    box-shadow: 0 0 5px #2c2c2c;
+    padding: 1em;
+}
+
+th{
+    font-weight: bold;
+}

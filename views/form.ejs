@@ -1,0 +1,87 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+    <section id="formSection">
+        <h1>Pet Shop</h1>
+        <form name="cart" method="POST" onsubmit="return formSubmit()" action="">
+            <label for="formName">Name*:</label>
+            <input type="text" id="formName" name="formName"><br>
+            <label for="email">Email*:</label>
+            <input type="text" id="email" name="email"><br>
+            <label for="phone">Phone*:</label>
+            <input type="phone" name="phone" id="phone"><br>
+            <label for="address">Address*:</label>
+            <input type="text" id="address" name="address"><br>
+            <label for="city">City*:</label>
+            <input type="text" id="city" name="city"><br>
+            <label for="postcode">Post Code*:</label>
+            <input type="text" id="postcode" name="postcode"><br>
+            <label for="province">Province*:</label>
+            <select name="province" id="province">
+                <option value="1.05">Alberta</option>
+                <option value="1.12">British Columbia</option>
+                <option value="1.12">Manitoba</option>
+                <option value="1.15">New-Brunswick</option>
+                <option value="1.15">Newfounland and Labrador</option>
+                <option value="1.05">Northwest Territories</option>
+                <option value="1.15">Nova Scotia</option>
+                <option value="1.05">Nunavut</option>
+                <option value="1.13">Ontario</option>
+                <option value="1.15">Prince Edward Island</option>
+                <option value="1.149">Qubec</option>
+                <option value="1.11">Saskatchewan</option>
+                <option value="1.05">Yukon</option>
+            </select><br>
+            <label for="apple">Apple:</label>
+            <input type="text" name="apple" id="apple"><br>
+            <label for="orange">Orange:</label>
+            <input type="text" name="orange" id="orange"><br>
+            <label for="toiletPaper">Toilet Paper:</label>
+            <input type="text" name="toiletPaper" id="toiletPaper"><br>
+            <label for="deliveryTime">Delivery Time:</label>
+            <select name="deliveryTime" id="deliveryTime">
+                <option value="30">1 Day</option>        
+                <option value="25">2 Days</option>
+                <option value="20">3 Days</option>
+                <option value="15">4 Days</option>
+            </select><br>
+            <input type="submit" name="placeOrder" id="placeOrder" value="Place Order"><br>
+        </form>
+    </section>
+    <section id="results">
+        <div class="invoice">
+            <%
+                if(typeof(errors) != 'undefined'){
+                    for(var error of errors){
+                        %>
+                        <p id="displayErrors"><%= error.msg %></p>
+                        <%
+                    }
+                }
+            %>
+            <%
+              if(typeof(address) != 'undefined'){
+                %>
+                <h2>Invoice</h2>
+                <h3>Name: <%= formName %> <br>
+                Email: <%= email %><br>
+                Phone: <%= phone %><br>
+                Delivery Address: <%= address %>, <%= city %>, <%= postcode %><br>
+                <%= apple %> Apple (60$): $<%= apple * 60 %><br> 
+                <%= orange %> Orange (400$): $<%= orange * 40 %><br>
+                <%= toiletPaper %> Toilet Paper (20$): $<%= toiletPaper *20 %><br>
+                Shipping Charges: $<%= deliveryTime %><br>
+                Sub Total: $<%= subTotal %><br>
+                Tax: $<%= tax %><br>
+                Total: $<%= total %><br>
+                Thanks for shopping with us</h3>
+                <%
+              }
+            %>
+          </div>
+        <div id="result">
+            <div id="invoice"></div>
+        </div>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>

@@ -1,0 +1,19 @@
+{
+  "name": "assignment4",
+  "version": "1.0.0",
+  "description": "assignment4",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ejs": "*",
+    "body-parser": "*",
+    "express-validator": "*",
+    "mongoose": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ezatullah Rafie",
+  "license": "ISC"
+}

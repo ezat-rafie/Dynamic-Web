@@ -1,0 +1,50 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+    <section id="formData">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Postcode</th>
+                    <th>Apple</th>
+                    <th>Orange</th>
+                    <th>Toilet paper</th>
+                    <th>Delivery Charge</th>
+                    <th>Sub total</th>
+                    <th>Tax</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    for(var order of orders){
+                        %>
+                        <tr>
+                            <td><%= order.formName %></td>
+                            <td><%= order.email %></td>
+                            <td><%= order.phone %></td>
+                            <td><%= order.address %></td>
+                            <td><%= order.city %></td>
+                            <td><%= order.postcode %></td>
+                            <td><%= order.apple %></td>
+                            <td><%= order.orange %></td>
+                            <td><%= order.toiletPaper %></td>
+                            <td>$<%= order.deliveryTime %></td>
+                            <td>$<%= order.subTotal.toFixed(2) %></td>
+                            <td>$<%= order.tax.toFixed(2) %></td>
+                            <td>$<%= order.total.toFixed(2) %></td>
+                        </tr>
+                        <%
+                    }
+                %>
+                
+            </tbody>
+        </table>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>
